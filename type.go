@@ -18,6 +18,11 @@ package schedx
 
 import "strings"
 
+const (
+	// Split is the split string.
+	Split = "<SPLIT>"
+)
+
 type KindType string
 
 const (
@@ -40,6 +45,7 @@ func (t GPTsType) String() string {
 	return string(t)
 }
 
+// Model return model name.
 func Model(model string) string {
 	if IsGPT4(model) {
 		return GPT4.String()
@@ -47,6 +53,7 @@ func Model(model string) string {
 	return GPT3.String()
 }
 
+// IsGPT4 return true if model is gpt-4.
 func IsGPT4(model string) bool {
 	model = strings.ToLower(model)
 	if strings.Contains(model, "gpt-4") {

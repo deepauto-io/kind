@@ -16,6 +16,8 @@ limitations under the License.
 
 package schedx
 
+import "strings"
+
 type KindType string
 
 const (
@@ -36,4 +38,19 @@ const (
 
 func (t GPTsType) String() string {
 	return string(t)
+}
+
+func Model(model string) string {
+	if IsGPT4(model) {
+		return GPT4.String()
+	}
+	return GPT3.String()
+}
+
+func IsGPT4(model string) bool {
+	model = strings.ToLower(model)
+	if strings.Contains(model, "gpt-4") {
+		return true
+	}
+	return false
 }

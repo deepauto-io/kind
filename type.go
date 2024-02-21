@@ -26,8 +26,9 @@ const (
 type KindType string
 
 const (
-	API KindType = "api"
-	WEB KindType = "web"
+	API  KindType = "api"
+	WEB  KindType = "web"
+	TEAM KindType = "team"
 )
 
 func (k KindType) String() string {

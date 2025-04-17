@@ -66,5 +66,8 @@ func IsGPT4(model string) bool {
 	if strings.Contains(model, "o3") {
 		return true
 	}
+	if strings.Contains(model, "o") {
+		return true
+	}
 	return false
 }
